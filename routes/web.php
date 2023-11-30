@@ -15,10 +15,12 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return 'WELCOME TO SIMPLEXBUYER';
-});
+})->name('dashboard');
 
 Route::get('/register', [AuthController::class, 'registerIndex'])->name('register.show');
 
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('/login', [AuthController::class, 'loginIndex'])->name('login.show');
+
+Route::post('login', [AuthController::class, 'login'])->name('login');

@@ -154,7 +154,7 @@
 
                 <p class="text-center">
                     <span>Hesabınız var mı?</span>
-                    <a href="auth-login-cover.html">
+                    <a href="{{route('login.show')}}">
                         <span>Giriş Yap</span>
                     </a>
                 </p>

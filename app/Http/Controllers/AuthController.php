@@ -6,6 +6,7 @@ use App\Http\Requests\TenantRegisterRequest;
 use App\Models\Tenant;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
@@ -44,5 +45,19 @@ class AuthController extends Controller
         DB::commit();
 
         return redirect()->route('login.show');
+    }
+
+    function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember_me)){
+            return redirect(route('dashboard'));
+        }
+
+        return  redirect()->back()->withErrors(['Kullanıcı adı veya şifreniz hatalı!']);
     }
 }
