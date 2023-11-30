@@ -14,7 +14,7 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return 'WELCOME TO SIMPLEXBUYER';
+    return view('dashboard.page');
 })->name('dashboard');
 
 Route::get('/register', [AuthController::class, 'registerIndex'])->name('register.show');

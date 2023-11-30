@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'tenant_id',
+        'deleted_at',
     ];
 
     /**
@@ -43,4 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    function tenant()
+    {
+        return $this->hasOne(Tenant::class, 'id', 'tenant_id');
+    }
 }
