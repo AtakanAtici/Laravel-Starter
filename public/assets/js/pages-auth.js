@@ -11,46 +11,53 @@ document.addEventListener('DOMContentLoaded', function (e) {
     if (formAuthentication) {
       const fv = FormValidation.formValidation(formAuthentication, {
         fields: {
-          username: {
+          tenant_name: {
             validators: {
               notEmpty: {
-                message: 'Please enter username'
+                message: 'Lütfen firmanızın adını girin..'
               },
               stringLength: {
-                min: 6,
-                message: 'Username must be more than 6 characters'
+                min: 3,
+                message: 'Firma adı 3 karakterden küçük olamaz..'
               }
             }
           },
           email: {
             validators: {
               notEmpty: {
-                message: 'Please enter your email'
+                message: 'Email adresinizi girin..'
               },
               emailAddress: {
-                message: 'Please enter valid email address'
+                message: 'Lütfen geçerli bir email adresi girin..'
               }
             }
           },
-          'email-username': {
+            name: {
             validators: {
               notEmpty: {
-                message: 'Please enter email / username'
-              },
-              stringLength: {
-                min: 6,
-                message: 'Username must be more than 6 characters'
+                message: 'Adınızı ve soyadınızı girin..'
               }
+            }
+          },
+          'tenant_phone': {
+            validators: {
+              notEmpty: {
+                message: 'Lütfen telefon numaranızı girin..'
+              },
+                phone: {
+                country: 'TR',
+                message: 'Lütfen geçerli bir telefon numarası girin..'
+                }
             }
           },
           password: {
             validators: {
               notEmpty: {
-                message: 'Please enter your password'
+                message: 'Lütfen şifrenizi girin..'
               },
               stringLength: {
                 min: 6,
-                message: 'Password must be more than 6 characters'
+                message: 'Şifreniz en az 6 karakterden oluşmalıdır..'
               }
             }
           },
@@ -74,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
           terms: {
             validators: {
               notEmpty: {
-                message: 'Please agree terms & conditions'
+                message: 'Lütfen kullanım koşullarını kabul edin..'
               }
             }
           }

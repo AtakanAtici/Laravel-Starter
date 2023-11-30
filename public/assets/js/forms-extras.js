@@ -16,6 +16,7 @@
     customDelimiter = document.querySelector('.custom-delimiter-mask'),
     prefixMask = document.querySelector('.prefix-mask');
 
+
   // Autosize
   // --------------------------------------------------------------------
   if (textarea) {
