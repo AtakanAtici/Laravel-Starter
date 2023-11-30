@@ -17,17 +17,13 @@
 
     <ul class="menu-inner py-1">
         <!-- Page -->
+        @can('edit_roles')
         <li class="menu-item active">
-            <a href="index.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Page 1">Page 1</div>
+            <a href="{{route('role.list')}}" class="menu-link">
+                <i class="menu-icon fa-solid fa-wand-magic-sparkles"></i>
+                <div>Roller ve Yetkilendirme</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="page-2.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Page 2">Page 2</div>
-            </a>
-        </li>
+        @endcan
     </ul>
 </aside>

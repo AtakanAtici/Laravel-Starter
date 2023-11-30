@@ -54,6 +54,10 @@
     <script src="../../assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../../assets/js/config.js"></script>
+    <script src="https://kit.fontawesome.com/7bb7a28777.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     @yield('css')
 </head>
@@ -135,6 +139,33 @@
 
 <!-- Main JS -->
 <script src="../../assets/js/main.js"></script>
+
+<!-- Toast -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<script>
+    @if ($errors->any())
+    Toastify({
+        text: "{{ $errors->first() }}",
+        duration: 3000,
+        close: true,
+        gravity: "center",
+        position: "right",
+        backgroundColor: "linear-gradient(to right, #f44336, #ff9800)",
+    }).showToast();
+    @endif
+
+    @if (Session::has('success'))
+    Toastify({
+        text: "{{ Session::get('success') }}",
+        duration: 3000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#4CAF50",
+        stopOnFocus: true,
+    }).showToast();
+    @endif
+</script>
 @yield('js')
 
 <!-- Page JS -->
