@@ -46,30 +46,61 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-nowrap fw-semibold">Role Yönetimi</td>
+                                    <td class="text-nowrap fw-semibold">Rol Yönetimi</td>
                                     <td>
                                         <div class="d-flex">
                                             <div class="form-check me-3 me-lg-3">
-                                                <input class="form-check-input" type="checkbox" id="userManagementRead" name="view_roles"
+                                                <input class="form-check-input" type="checkbox" id="roleManagementRead" name="view_roles"
                                                     {{$role->hasPermissionTo('view_roles') ? 'checked' : ''}}
+                                                />
+                                                <label class="form-check-label" for="roleManagementRead"> Görüntüle </label>
+                                            </div>
+                                            <div class="form-check me-3 me-lg-3">
+                                                <input class="form-check-input" type="checkbox" id="roleManagementWrite" name="create_roles"
+                                                    {{$role->hasPermissionTo('create_roles') ? 'checked' : ''}}
+                                                />
+                                                <label class="form-check-label" for="roleManagementWrite"> Oluştur </label>
+                                            </div>
+                                            <div class="form-check  me-3 me-lg-3">
+                                                <input class="form-check-input" type="checkbox" id="roleManagementEdit" name="edit_roles"
+                                                    {{$role->hasPermissionTo('edit_roles') ? 'checked' : ''}}
+                                                />
+                                                <label class="form-check-label" for="roleManagementEdit"> Düzenle </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="roleManagementCreate" name="delete_roles"
+                                                    {{$role->hasPermissionTo('delete_roles') ? 'checked' : ''}}
+                                                />
+                                                <label class="form-check-label" for="roleManagementCreate"> Sil </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-nowrap fw-semibold">Kullanıcı Yönetimi</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="form-check me-3 me-lg-3">
+                                                <input class="form-check-input" type="checkbox" id="userManagementRead" name="view_users"
+                                                    {{$role->hasPermissionTo('view_users') ? 'checked' : ''}}
                                                 />
                                                 <label class="form-check-label" for="userManagementRead"> Görüntüle </label>
                                             </div>
                                             <div class="form-check me-3 me-lg-3">
-                                                <input class="form-check-input" type="checkbox" id="userManagementWrite" name="create_roles"
-                                                    {{$role->hasPermissionTo('create_roles') ? 'checked' : ''}}
+                                                <input class="form-check-input" type="checkbox" id="userManagementWrite" name="create_users"
+                                                    {{$role->hasPermissionTo('create_users') ? 'checked' : ''}}
                                                 />
                                                 <label class="form-check-label" for="userManagementWrite"> Oluştur </label>
                                             </div>
                                             <div class="form-check  me-3 me-lg-3">
-                                                <input class="form-check-input" type="checkbox" id="userManagementEdit" name="edit_roles"
-                                                    {{$role->hasPermissionTo('edit_roles') ? 'checked' : ''}}
+                                                <input class="form-check-input" type="checkbox" id="userManagementEdit" name="edit_users"
+                                                    {{$role->hasPermissionTo('edit_users') ? 'checked' : ''}}
                                                 />
                                                 <label class="form-check-label" for="userManagementEdit"> Düzenle </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="userManagementCreate" name="delete_roles"
-                                                    {{$role->hasPermissionTo('delete_roles') ? 'checked' : ''}}
+                                                <input class="form-check-input" type="checkbox" id="userManagementCreate" name="delete_users"
+                                                    {{$role->hasPermissionTo('delete_users') ? 'checked' : ''}}
                                                 />
                                                 <label class="form-check-label" for="userManagementCreate"> Sil </label>
                                             </div>

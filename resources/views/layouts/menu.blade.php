@@ -17,13 +17,22 @@
 
     <ul class="menu-inner py-1">
         <!-- Page -->
+        @can('view_users')
+            <li class="menu-item {{isActive('user.list')}} ">
+                <a href="{{route('user.list')}}" class="menu-link">
+                    <i class="menu-icon fa-solid fa-users"></i>
+                    <div>Kullanıcılar</div>
+                </a>
+            </li>
+        @endcan
         @can('edit_roles')
-        <li class="menu-item active">
+        <li class="menu-item {{isActive('role.list')}}">
             <a href="{{route('role.list')}}" class="menu-link">
                 <i class="menu-icon fa-solid fa-wand-magic-sparkles"></i>
                 <div>Roller ve Yetkilendirme</div>
             </a>
         </li>
         @endcan
+
     </ul>
 </aside>

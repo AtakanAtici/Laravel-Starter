@@ -41,4 +41,11 @@ Route::middleware('auth')->group(function (){
        Route::get('destroy/{id}', [RoleController::class, 'destroy'])->name('role.destroy')->can('delete_roles');
     });
 
+    Route::prefix('users')->group(function (){
+        Route::get('list', [UserController::class, 'index'])->name('user.list')->can('view_users');
+        Route::post('store', [UserController::class, 'store'])->name('user.store')->can('create_users');
+        Route::post('update', [UserController::class, 'update'])->name('user.update')->can('edit_users');
+        Route::get('destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy')->can('delete_users');
+    });
+
 });

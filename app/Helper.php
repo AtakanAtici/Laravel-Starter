@@ -9,3 +9,20 @@ if(!function_exists('roleExist')){
         return false;
     }
 }
+
+if (!function_exists('isActive')) {
+    function isActive($route, $output = 'active')
+    {
+        if (is_array($route)) {
+            foreach ($route as $r) {
+                if (Route::currentRouteName() == $r) {
+                    return $output;
+                }
+            }
+        } else {
+            if (Route::currentRouteName() == $route) {
+                return $output;
+            }
+        }
+    }
+}

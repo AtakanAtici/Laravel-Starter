@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use SDamian\Larasort\AutoSortable;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, AutoSortable;
 
     /**
      * The attributes that are mass assignable.
@@ -24,6 +25,14 @@ class User extends Authenticatable
         'password',
         'tenant_id',
         'deleted_at',
+        'status',
+    ];
+
+    private array $sortables = [
+        'name',
+        'email',
+        'status',
+        'created_at',
     ];
 
     /**
@@ -49,5 +58,14 @@ class User extends Authenticatable
     function tenant()
     {
         return $this->hasOne(Tenant::class, 'id', 'tenant_id');
+    }
+
+    function getStatusTextAttribute()
+    {
+        return config('status.user_status')[$this->status];
+    }
+    function getStatusColorAttribute()
+    {
+        return config('status.user_status_color')[$this->status];
     }
 }

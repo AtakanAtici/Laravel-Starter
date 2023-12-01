@@ -142,7 +142,11 @@
 
 <!-- Toast -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
+<script src="../../assets/vendor/libs/select2/select2.js"></script>
+<script src="../../assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+<script src="../../assets/js/forms-selects.js"></script>
+<link rel="stylesheet" href="../../assets/vendor/libs/select2/select2.css" />
+<link rel="stylesheet" href="../../assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
 <script>
     @if ($errors->any())
     Toastify({
@@ -165,6 +169,8 @@
         stopOnFocus: true,
     }).showToast();
     @endif
+
+
 </script>
 @yield('js')
 

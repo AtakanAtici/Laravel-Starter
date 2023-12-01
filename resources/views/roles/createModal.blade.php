@@ -63,6 +63,29 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td class="text-nowrap fw-semibold">Kullanıcı</td>
+                                    <td>
+                                        <div class="d-flex">
+                                            <div class="form-check me-3 me-lg-3">
+                                                <input class="form-check-input" type="checkbox" id="roleManagementRead" name="view_users"/>
+                                                <label class="form-check-label" for="roleManagementRead"> Görüntüle </label>
+                                            </div>
+                                            <div class="form-check me-3 me-lg-3">
+                                                <input class="form-check-input" type="checkbox" id="roleManagementWrite" name="create_users"/>
+                                                <label class="form-check-label" for="roleManagementWrite"> Oluştur </label>
+                                            </div>
+                                            <div class="form-check  me-3 me-lg-3">
+                                                <input class="form-check-input" type="checkbox" id="roleManagementEdit" name="edit_users"/>
+                                                <label class="form-check-label" for="roleManagementEdit"> Düzenle </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="roleManagementCreate" name="delete_users"/>
+                                                <label class="form-check-label" for="roleManagementCreate"> Sil </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

@@ -103,7 +103,7 @@
                         <input type="text" class="form-control" id="email" name="email" placeholder="Eposta adresinizi girin.." />
                     </div>
                     <div class="mb-3 form-password-toggle">
-                        <label class="form-label" for="password">Password</label>
+                        <label class="form-label" for="password">Şifre</label>
                         <div class="input-group input-group-merge">
                             <input
                                 type="password"
